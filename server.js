@@ -19,14 +19,21 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const basePath = path.join(__dirname + "/views");
-app.use(express.static(basePath)); 
+const path1 = __dirname + '/app/views/';
+
+app.use(express.static(path1));
 
 const db = require("./app/models");
 const Role = db.role;
 
+//"mongodb+srv://marksSeminary:<password>@cluster0.epv36.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+// db.mongoose
+//   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   })
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect("mongodb+srv://marksSeminary:Chaya207322868!@cluster0.epv36.mongodb.net/marks-seminary?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -40,8 +47,8 @@ db.mongoose
   });
 
 // simple route
-app.get("/",(req,res)=>{  
-  res.sendFile(basePath+"/index.html");
+app.get("/", (req, res) => {
+  res.sendFile(path1 + "index.html");
 });
 
 // routes
