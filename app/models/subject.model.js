@@ -12,9 +12,10 @@ const Subject = mongoose.model(
         },
         schoolRef:
         {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "School"
-        }
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "School"
+        },
+        type: Number
 
     })
 );

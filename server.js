@@ -26,6 +26,7 @@ app.use(express.static(path1));
 const db = require("./app/models");
 const Role = db.role;
 
+//"mongodb+srv://marksSeminary:Chaya207322868!@cluster0.epv36.mongodb.net/marks-seminary?retryWrites=true&w=majority"
 //"mongodb+srv://marksSeminary:<password>@cluster0.epv36.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // db.mongoose
 //   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
@@ -33,7 +34,7 @@ const Role = db.role;
 //     useUnifiedTopology: true
 //   })
 db.mongoose
-  .connect("mongodb+srv://marksSeminary:Chaya207322868!@cluster0.epv36.mongodb.net/marks-seminary?retryWrites=true&w=majority", {
+  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

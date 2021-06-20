@@ -17,7 +17,8 @@ exports.create = (req, res) => {
         subjectName: req.body.subjectName,
         numOfProjects: req.body.numOfProjects,
         trend: req.body.trendRef,
-        schoolRef: req.schoolId
+        schoolRef: req.schoolId,
+        type:req.body.type
     });
 
     // Save Note in the database
@@ -79,10 +80,11 @@ exports.update = (req, res) => {
     }
 
     // Find note and update it with the request body
-    Subject.findByIdAndUpdate(req.query.id, {
+    Subject.findByIdAndUpdate(req.body._id, {
         subjectName: req.body.subjectName,
         numOfProjects: req.body.numOfProjects,
-        trendRef: req.body.trendRef
+        trend: req.body.trendRef,
+        type:req.body.type
     }, { new: true })
         .then(note => {
             if (!note) {

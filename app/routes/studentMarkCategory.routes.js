@@ -12,6 +12,7 @@ module.exports = function (app) {
 
   app.get("/api/studentMarkCategory/all", [authJwt.verifyToken], controller.findAll);
   app.get("/api/studentMarkCategory/byStudent", [authJwt.verifyToken], controller.findByStudent);
+  app.get("/api/studentMarkCategory/findByStudentAllMarks", [authJwt.verifyToken], controller.findByStudentAllMarks);
   app.post("/api/studentMarkCategory/create", [authJwt.verifyToken], controller.create);
   app.get("/api/studentMarkCategory/find", [authJwt.verifyToken], controller.findOne);
   app.put("/api/studentMarkCategory/update", [authJwt.verifyToken], controller.update);

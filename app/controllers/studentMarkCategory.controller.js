@@ -56,6 +56,17 @@ exports.findByStudent = (req, res) => {
         });
 };
 
+exports.findByStudentAllMarks = (req, res) => {
+    StudentMarkCategory.find({ "schoolRef": req.schoolId, "student": req.query.student, "type": req.query.type })
+        .then(notes => {
+            res.send(notes);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message
+            });
+        });
+};
+
 // Find a single note with a noteId
 exports.findOne = (req, res) => {
     StudentMarkCategory.findById(req.params.id)
