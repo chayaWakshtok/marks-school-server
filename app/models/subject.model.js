@@ -4,7 +4,9 @@ const Subject = mongoose.model(
     "Subject",
     new mongoose.Schema({
         subjectName: String,
-        numOfProjects: Number,
+        numOfProjectsEnter: Number,
+        numOfProjectsOutside: Number,
+        numOfProjectsEnd: Number,
         trend:
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -15,7 +17,7 @@ const Subject = mongoose.model(
             type: mongoose.Schema.Types.ObjectId,
             ref: "School"
         },
-        type: Number
+        type: Number,
 
     })
 );

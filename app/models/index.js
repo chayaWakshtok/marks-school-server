@@ -24,6 +24,9 @@ db.trend = require("./trend.model");
 db.typeCertificate = require("./typeCertificates.model");
 db.user = require("./user.model");
 db.evaluationStudentMark=require("./evaluationStudentMark.model");
+db.project=require("./project.model");
+db.categoryProject=require("./categoryProject.model");
+db.studentMarkProjectCategory=require("./studentMarkProjectCategory.model")
 db.ROLES = ["teacher", "manager", "secretary", "bigmanager"];
 
 module.exports = db;

@@ -33,11 +33,11 @@ const Role = db.role;
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
 //   })
-db.mongoose
-  .connect(`mongodb+srv://marksSeminary:Chaya207322868!@cluster0.epv36.mongodb.net/marks-seminary?retryWrites=true&w=majority`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+  db.mongoose
+    .connect("mongodb+srv://marksSeminary:Chaya207322868!@cluster0.epv36.mongodb.net/marks-seminary?retryWrites=true&w=majority", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
@@ -68,6 +68,9 @@ require("./app/routes/typeCert.routes")(app);
 require("./app/routes/category.routes")(app);
 require("./app/routes/studentMarkCategory.routes")(app);
 require("./app/routes/evaluationStudentMark.routes")(app);
+require("./app/routes/project.routes")(app);
+require("./app/routes/categoryProject.routes")(app);
+require("./app/routes/studentMarkProjectCategory.routes")(app);
 // require("./app/routes/year.routes")(app);
 
 // set port, listen for requests
