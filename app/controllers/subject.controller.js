@@ -20,7 +20,8 @@ exports.create = (req, res) => {
         numOfProjectsEnd: req.body.numOfProjectsEnd,
         trend: req.body.trendRef,
         schoolRef: req.schoolId,
-        type: req.body.type
+        type: req.body.type,
+        semel: req.body.semel
     });
 
     // Save Note in the database
@@ -88,7 +89,8 @@ exports.update = (req, res) => {
         numOfProjectsOutside: req.body.numOfProjectsOutside,
         numOfProjectsEnd: req.body.numOfProjectsEnd,
         trend: req.body.trendRef,
-        type: req.body.type
+        type: req.body.type,
+        semel: req.body.semel
     }, { new: true })
         .then(note => {
             if (!note) {

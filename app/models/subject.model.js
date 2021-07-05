@@ -18,6 +18,7 @@ const Subject = mongoose.model(
             ref: "School"
         },
         type: Number,
+        semel:String
 
     })
 );
