@@ -148,8 +148,11 @@ exports.update = (req, res) => {
   }
 
   // Find note and update it with the request body
-  User.findByIdAndUpdate(req.query.id, {
+  User.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
+    email: req.body.email,
+    tzId: req.body.tzId,
+    phone: req.body.phone,
   }, { new: true })
     .then(note => {
       if (!note) {

@@ -73,7 +73,7 @@ exports.update = (req, res) => {
     }
 
     // Find note and update it with the request body
-    Trend.findByIdAndUpdate(req.query.id, {
+    Trend.findByIdAndUpdate(req.body._id, {
         name: req.body.name,
     }, { new: true })
         .then(note => {
