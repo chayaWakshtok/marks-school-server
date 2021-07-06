@@ -38,6 +38,7 @@ const Role = db.role;
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
+    
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
