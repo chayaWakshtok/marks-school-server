@@ -12,7 +12,7 @@ const TeacherClassSubject = mongoose.model(
         teacher:
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Teacher"
+            ref: "User"
         },
         subject:
         {

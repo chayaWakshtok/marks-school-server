@@ -29,6 +29,7 @@ exports.create = (req, res) => {
 // Retrieve and return all notes from the database.
 exports.findAll = (req, res) => {
     TeacherClassSubject.find({ "schoolRef": req.schoolId })
+    .populate("class").populate('teacher').populate("subject").exec()
         .then(notes => {
             res.send(notes);
         }).catch(err => {
@@ -73,14 +74,6 @@ exports.findOne = (req, res) => {
 
 // Update a note identified by the noteId in the request
 exports.update = (req, res) => {
-    // Validate Request
-    // if (!req.body.className) {
-    //     return res.status(400).send({
-    //         message: "Class content can not be empty"
-    //     });
-    // }
-
-    // Find note and update it with the request body
     TeacherClassSubject.findByIdAndUpdate(req.body._id, {
         class: req.body.class,
         subject: req.body.subject,

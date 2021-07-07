@@ -22,8 +22,8 @@ exports.create = (req, res) => {
         address: req.body.address,
         phone: req.body.phone,
         isActive: true,
-        classSchool: req.body.classSchool._id,
-        trend: req.body.trend._id,
+        classSchool: req.body.classSchool,
+        trend: req.body.trend,
     });
 
     student.save()
@@ -99,8 +99,8 @@ exports.update = (req, res) => {
         bornDate: req.body.bornDate,
         address: req.body.address,
         phone: req.body.phone,
-        classSchool: req.body.classSchool._id,
-        trend: req.body.trend._id,
+        classSchool: req.body.classSchool,
+        trend: req.body.trend,
     }, { new: true })
         .then(note => {
             if (!note) {
