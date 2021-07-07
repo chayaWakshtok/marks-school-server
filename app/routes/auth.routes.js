@@ -21,6 +21,7 @@ module.exports = function (app) {
   );
 
   app.get(
+    
     "/api/auth/payment",
     controllerPayment.payment
   );
