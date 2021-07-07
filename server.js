@@ -33,6 +33,7 @@ const Role = db.role;
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
 //   })
+
   db.mongoose
     .connect("mongodb+srv://marksSeminary:Chaya207322868!@cluster0.epv36.mongodb.net/marks-seminary?retryWrites=true&w=majority", {
       useNewUrlParser: true,
